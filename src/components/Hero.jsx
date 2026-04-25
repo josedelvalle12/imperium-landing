@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { C, CINZEL, EASE, fadeUp } from '../tokens';
-import pantallaPlanner from '/assets/pantalla_Planner.png';
-import pantallaEntrena from '/assets/pantalla_Entrena.png';
-import marmolBg from '/assets/fondo_marmol.jpg';
+import pantallaPlanner from '../assets/pantalla_Planner.png';
+import pantallaEntrena from '../assets/pantalla_Entrena.png';
+import marmolBg from '../assets/fondo_marmol.jpg';
 
 const DeviceFrame = ({ children, style = {} }) => (
   <div style={{

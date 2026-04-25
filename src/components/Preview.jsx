@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { C, CINZEL, fadeUp, scaleIn, containerStyle } from '../tokens';
-import pantallaPlanner from '/assets/pantalla_Planner.png';
-import pantallaEntrena from '/assets/pantalla_Entrena.png';
-import pantallaProgress from '/assets/pantalla_Progress.jpeg';
+import pantallaPlanner from '../assets/pantalla_Planner.png';
+import pantallaEntrena from '../assets/pantalla_Entrena.png';
+import pantallaProgress from '../assets/pantalla_Progress.jpeg';
 
 const screens = [
   {

@@ -1,5 +1,5 @@
 import { C, CINZEL } from '../tokens';
-import logoHorizontal from '/assets/Logo_Imperium-horizontal.svg';
+import logoHorizontal from '../assets/Logo_Imperium-horizontal.svg';
 
 export default function Footer() {
   return (

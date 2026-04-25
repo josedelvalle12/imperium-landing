@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { C, CINZEL, fadeUp } from '../tokens';
-import marmolBg from '/assets/fondo_marmol.jpg';
+import marmolBg from '../assets/fondo_marmol.jpg';
 
 export default function Philosophy() {
   const ref = useRef(null);

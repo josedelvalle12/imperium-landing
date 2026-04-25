@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { C, CINZEL, EASE, fadeUp } from '../tokens';
-import logoImperium from '/assets/Logo_Imperium.svg';
-import marmolBg from '/assets/fondo_marmol.jpg';
+import logoImperium from '../assets/Logo_Imperium.svg';
+import marmolBg from '../assets/fondo_marmol.jpg';
 
 export default function CTA() {
   return (
