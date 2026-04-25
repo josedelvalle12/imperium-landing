@@ -1,14 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
 
 export default function CursorGlow() {
-  const dotRef  = useRef(null);
-  const glowRef = useRef(null);
-  const mouse   = useRef({ x: -100, y: -100 });
-  const glow    = useRef({ x: -100, y: -100 });
+  const dotRef       = useRef(null);
+  const glowRef      = useRef(null);
+  const mouse        = useRef({ x: -100, y: -100 });
+  const glow         = useRef({ x: -100, y: -100 });
+  const touchTimer   = useRef(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    const isTouchDevice = () => window.matchMedia('(hover: none)').matches;
+
     const onMove = (e) => {
+      if (isTouchDevice()) return;
       mouse.current = { x: e.clientX, y: e.clientY };
       if (dotRef.current) {
         dotRef.current.style.left = e.clientX + 'px';
@@ -16,12 +20,33 @@ export default function CursorGlow() {
       }
       if (!visible) setVisible(true);
     };
-    const onEnter = () => setVisible(true);
-    const onLeave = () => setVisible(false);
+    const onEnter = () => { if (!isTouchDevice()) setVisible(true); };
+    const onLeave = () => { if (!isTouchDevice()) setVisible(false); };
+
+    const onTouch = (e) => {
+      const touch = e.touches[0];
+      if (!touch) return;
+      const x = touch.clientX;
+      const y = touch.clientY;
+      mouse.current = { x, y };
+      glow.current  = { x, y };
+      if (dotRef.current) {
+        dotRef.current.style.left = x + 'px';
+        dotRef.current.style.top  = y + 'px';
+      }
+      if (glowRef.current) {
+        glowRef.current.style.left = x + 'px';
+        glowRef.current.style.top  = y + 'px';
+      }
+      setVisible(true);
+      clearTimeout(touchTimer.current);
+      touchTimer.current = setTimeout(() => setVisible(false), 700);
+    };
 
     document.addEventListener('mousemove', onMove);
     document.addEventListener('mouseenter', onEnter);
     document.addEventListener('mouseleave', onLeave);
+    document.addEventListener('touchstart', onTouch, { passive: true });
 
     const scaleDot   = () => { if (dotRef.current) dotRef.current.style.transform = 'translate(-50%,-50%) scale(3)'; };
     const unscaleDot = () => { if (dotRef.current) dotRef.current.style.transform = 'translate(-50%,-50%) scale(1)'; };
@@ -52,7 +77,9 @@ export default function CursorGlow() {
       document.removeEventListener('mousemove', onMove);
       document.removeEventListener('mouseenter', onEnter);
       document.removeEventListener('mouseleave', onLeave);
+      document.removeEventListener('touchstart', onTouch);
       cancelAnimationFrame(rafId);
+      clearTimeout(touchTimer.current);
       observer.disconnect();
     };
   }, []);
@@ -91,7 +118,7 @@ export default function CursorGlow() {
           opacity:       visible ? 1 : 0,
           mixBlendMode:  'screen',
           willChange:    'left, top',
-          transition:    'opacity 0.4s ease',
+          transition:    'opacity 0.6s ease',
           left:          -100,
           top:           -100,
         }}
