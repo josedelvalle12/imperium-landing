@@ -21,7 +21,7 @@ export default function Nav() {
         <img src={logoHorizontal} alt="Imperium" style={{ height: 28, display: 'block' }} />
       </a>
       <motion.a
-        href="#cta-final"
+        href="https://app.imperiumfit.app/"
         whileHover={{
           scale:      1.05,
           background: 'rgba(0,122,255,0.09)',

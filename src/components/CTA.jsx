@@ -56,7 +56,7 @@ export default function CTA() {
 
         <motion.div {...fadeUp(0.3)}>
           <motion.a
-            href="#"
+            href="https://app.imperiumfit.app/"
             whileHover={{ y: -3, scale: 1.025, boxShadow: '0 0 56px rgba(0,114,240,0.45)', borderColor: 'rgba(120,180,255,0.45)' }}
             transition={{ duration: 0.25, ease: EASE }}
             style={{
