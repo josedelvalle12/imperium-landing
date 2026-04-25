@@ -1,10 +1,13 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { C, CINZEL, fadeUp, scaleIn, containerStyle, sectionPad } from '../tokens';
+import { C, CINZEL, fadeUp, scaleIn, containerStyle } from '../tokens';
+import pantallaPlanner from '/assets/pantalla_Planner.png';
+import pantallaEntrena from '/assets/pantalla_Entrena.png';
+import pantallaProgress from '/assets/pantalla_Progress.jpeg';
 
 const screens = [
   {
-    src:     '/assets/pantalla_Planner.png',
+    src:     pantallaPlanner,
     alt:     'Planner semanal',
     title:   'Planificación semanal',
     caption: 'Organizá tu semana con rutinas asignadas a cada día. Claro, sin fricción.',
@@ -13,7 +16,7 @@ const screens = [
     marginTop: 0,
   },
   {
-    src:     '/assets/pantalla_Entrena.png',
+    src:     pantallaEntrena,
     alt:     'Entrenamiento activo',
     title:   'Entrenamiento en vivo',
     caption: 'Controlá el timer, las series y los pesos en tiempo real. Sin distracciones.',
@@ -22,7 +25,7 @@ const screens = [
     marginTop: 40,
   },
   {
-    src:     '/assets/pantalla_Progress.jpeg',
+    src:     pantallaProgress,
     alt:     'Progreso y métricas',
     title:   'Progreso y métricas',
     caption: 'Tus PRs, tu racha, tu actividad. Todo en un solo lugar, sin ruido.',

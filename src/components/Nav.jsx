@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { C, CINZEL } from '../tokens';
+import logoHorizontal from '/assets/Logo_Imperium-horizontal.svg';
 
 export default function Nav() {
   return (
@@ -17,7 +18,7 @@ export default function Nav() {
       borderBottom:         `1px solid ${C.border}`,
     }}>
       <a href="#">
-        <img src="/assets/Logo_Imperium-horizontal.svg" alt="Imperium" style={{ height: 28, display: 'block' }} />
+        <img src={logoHorizontal} alt="Imperium" style={{ height: 28, display: 'block' }} />
       </a>
       <motion.a
         href="#cta-final"

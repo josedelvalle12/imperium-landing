@@ -1,6 +1,9 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { C, CINZEL, EASE, fadeUp } from '../tokens';
+import pantallaPlanner from '/assets/pantalla_Planner.png';
+import pantallaEntrena from '/assets/pantalla_Entrena.png';
+import marmolBg from '/assets/fondo_marmol.jpg';
 
 const DeviceFrame = ({ children, style = {} }) => (
   <div style={{
@@ -32,7 +35,7 @@ export default function Hero() {
       <div style={{
         position:           'absolute',
         inset:              0,
-        backgroundImage:    'url(/assets/fondo_marmol.jpg)',
+        backgroundImage:    `url(${marmolBg})`,
         backgroundSize:     'cover',
         backgroundPosition: 'center',
         opacity:            0.07,
@@ -176,7 +179,7 @@ export default function Hero() {
           <div className="hero-phone-wrap">
             <motion.div {...fadeUp(0.2)} className="hero-phone-main float-a">
               <DeviceFrame style={{ width: '100%', height: '100%' }}>
-                <img src="/assets/pantalla_Planner.png" alt="Planner Imperium" style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                <img src={pantallaPlanner} alt="Planner Imperium" style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
               </DeviceFrame>
             </motion.div>
 
@@ -195,7 +198,7 @@ export default function Hero() {
               border:       '1.5px solid rgba(255,255,255,0.1)',
               flexShrink:   0,
             }}>
-              <img src="/assets/pantalla_Entrena.png" alt="Entrenamiento Imperium" style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+              <img src={pantallaEntrena} alt="Entrenamiento Imperium" style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
             </motion.div>
           </div>
         </div>

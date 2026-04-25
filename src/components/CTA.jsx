@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { C, CINZEL, EASE, fadeUp } from '../tokens';
+import logoImperium from '/assets/Logo_Imperium.svg';
 
 export default function CTA() {
   return (
@@ -25,7 +26,7 @@ export default function CTA() {
       <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative', zIndex: 1 }}>
         <motion.img
           {...fadeUp(0)}
-          src="/assets/Logo_Imperium.svg"
+          src={logoImperium}
           alt="Imperium"
           style={{ height: 72, margin: '0 auto 40px', display: 'block', opacity: 0.95 }}
         />

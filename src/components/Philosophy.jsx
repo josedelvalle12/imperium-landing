@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { C, CINZEL, fadeUp } from '../tokens';
+import marmolBg from '/assets/fondo_marmol.jpg';
 
 export default function Philosophy() {
   const ref = useRef(null);
@@ -18,7 +19,7 @@ export default function Philosophy() {
       <div style={{
         position:           'absolute',
         inset:              0,
-        backgroundImage:    'url(/assets/fondo_marmol.jpg)',
+        backgroundImage:    `url(${marmolBg})`,
         backgroundSize:     'cover',
         backgroundPosition: 'center',
         opacity:            0.05,

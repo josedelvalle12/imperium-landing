@@ -1,4 +1,5 @@
 import { C, CINZEL } from '../tokens';
+import logoHorizontal from '/assets/Logo_Imperium-horizontal.svg';
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
       borderTop:  `1px solid ${C.border}`,
     }}>
       <img
-        src="/assets/Logo_Imperium-horizontal.svg"
+        src={logoHorizontal}
         alt="Imperium"
         style={{ height: 20, opacity: 0.35, filter: 'grayscale(1)' }}
       />
