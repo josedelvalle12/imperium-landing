@@ -62,3 +62,101 @@ a, button {
 .float-a { animation: float-a 7s ease-in-out infinite; }
 .float-b { animation: float-b 8.5s ease-in-out infinite; }
 .float-c { animation: float-c 6.5s ease-in-out infinite; }
+
+/* ─── Responsive padding ─── */
+.s-pad      { padding: 64px 20px; }
+.s-pad-tall { padding: 80px 20px; }
+.nav-pad    { padding: 0 20px; }
+.hero-pad   { padding: 80px 20px; }
+
+@media (min-width: 640px) {
+  .s-pad      { padding: 80px 32px; }
+  .s-pad-tall { padding: 110px 32px; }
+  .nav-pad    { padding: 0 40px; }
+  .hero-pad   { padding: 80px 32px; }
+}
+
+@media (min-width: 1024px) {
+  .s-pad      { padding: 120px 56px; }
+  .s-pad-tall { padding: 160px 56px; }
+  .nav-pad    { padding: 0 56px; }
+  .hero-pad   { padding: 64px 56px 120px; }
+}
+
+/* ─── Hero ─── */
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+@media (min-width: 768px) { .hero-grid { grid-template-columns: 1fr 1fr; gap: 80px; } }
+
+.hero-phone-wrap { position: relative; height: 380px; display: flex; justify-content: center; align-items: flex-start; }
+@media (min-width: 768px) { .hero-phone-wrap { height: 560px; } }
+
+.hero-phone-main { width: 196px; height: 424px; z-index: 2; flex-shrink: 0; }
+@media (min-width: 768px) { .hero-phone-main { width: 240px; height: 519px; } }
+
+.hero-phone-secondary { display: none !important; }
+@media (min-width: 768px) { .hero-phone-secondary { display: block !important; } }
+
+/* ─── Value pillars ─── */
+.value-grid { display: grid; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .value-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.pillar-cell { padding: 40px 24px; }
+@media (min-width: 768px) { .pillar-cell { padding: 56px 40px; } }
+
+/* ─── Features ─── */
+.features-grid { display: grid; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.feature-cell { padding: 40px 24px; }
+@media (min-width: 768px) { .feature-cell { padding: 52px 48px; } }
+
+/* ─── Progression ─── */
+.symbols-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 64px; }
+@media (min-width: 640px) { .symbols-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .symbols-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.symbol-card { padding: 36px 24px; }
+@media (min-width: 768px) { .symbol-card { padding: 52px 36px; } }
+
+.ranks-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 640px) { .ranks-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .ranks-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.journey-banner {
+  display: flex; flex-direction: column;
+  align-items: flex-start; gap: 24px;
+  padding: 28px 20px;
+}
+@media (min-width: 640px) {
+  .journey-banner {
+    flex-direction: row; align-items: center;
+    justify-content: space-between; gap: 40px;
+    padding: 40px 52px;
+  }
+}
+
+/* ─── Preview phones ─── */
+.preview-phones { display: flex; flex-direction: column; gap: 48px; align-items: center; }
+@media (min-width: 768px) {
+  .preview-phones { flex-direction: row; gap: 32px; justify-content: center; align-items: flex-start; }
+}
+
+.phone-mt-40, .phone-mt-16 { margin-top: 0; }
+@media (min-width: 768px) {
+  .phone-mt-40 { margin-top: 40px; }
+  .phone-mt-16 { margin-top: 16px; }
+}
+
+/* ─── Footer ─── */
+.footer-inner {
+  display: flex; flex-direction: column;
+  gap: 12px; align-items: center; text-align: center;
+  padding: 28px 20px;
+}
+@media (min-width: 640px) {
+  .footer-inner {
+    flex-direction: row; justify-content: space-between;
+    text-align: left; padding: 36px 40px;
+  }
+}
+@media (min-width: 1024px) { .footer-inner { padding: 36px 56px; } }

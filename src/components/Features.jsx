@@ -65,7 +65,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" style={{ ...sectionPad, background: C.surface }}>
+    <section id="features" className="s-pad" style={{ background: C.surface }}>
       <div style={containerStyle}>
         <motion.div {...fadeUp(0)} style={{ marginBottom: 64 }}>
           <span style={{
@@ -89,12 +89,10 @@ export default function Features() {
           <div style={{ width: 36, height: 1, background: C.primary }} />
         </motion.div>
 
-        <div style={{
-          display:             'grid',
-          gridTemplateColumns: 'repeat(2, 1fr)',
-          background:          C.border,
-          gap:                 1,
-          border:              `1px solid ${C.border}`,
+        <div className="features-grid" style={{
+          background: C.border,
+          gap:        1,
+          border:     `1px solid ${C.border}`,
         }}>
           {features.map((f, i) => (
             <FeatureItem key={f.num} feature={f} delay={i * 0.08} />
@@ -109,9 +107,9 @@ function FeatureItem({ feature, delay }) {
   return (
     <motion.div
       {...fadeUp(delay)}
+      className="feature-cell"
       style={{
         background: C.surfaceLow,
-        padding:    '52px 48px',
         position:   'relative',
         overflow:   'hidden',
       }}

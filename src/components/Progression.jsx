@@ -110,8 +110,7 @@ export default function Progression() {
   const colY = useTransform(scrollYProgress, [0, 1], [40, -140]);
 
   return (
-    <section ref={ref} id="progression" style={{
-      ...sectionPad,
+    <section ref={ref} id="progression" className="s-pad" style={{
       background:   C.surfaceLow,
       borderTop:    `1px solid ${C.border}`,
       borderBottom: `1px solid ${C.border}`,
@@ -142,17 +141,17 @@ export default function Progression() {
         </motion.div>
 
         {/* ── Symbol cards ── */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginBottom: 64 }}>
+        <div className="symbols-grid">
           {symbols.map((s, i) => (
             <motion.div
               key={s.tag}
               {...scaleIn(i * 0.12)}
               whileHover={{ borderColor: 'rgba(0,122,255,0.3)', boxShadow: '0 0 48px rgba(0,122,255,0.07)', y: -4 }}
+              className="symbol-card"
               style={{
                 background:   C.surfaceMid,
                 border:       `1px solid ${C.border}`,
                 borderRadius: 6,
-                padding:      '52px 36px',
                 transition:   'border-color 0.3s',
                 transform:    i === 1 ? 'scale(1.03)' : undefined,
                 zIndex:       i === 1 ? 2 : undefined,
@@ -179,15 +178,10 @@ export default function Progression() {
         </div>
 
         {/* ── Journey banner ── */}
-        <motion.div {...fadeUp(0)} style={{
-          background:     C.surfaceHigh,
-          border:         `1px solid ${C.border}`,
-          borderRadius:   6,
-          padding:        '40px 52px',
-          display:        'flex',
-          alignItems:     'center',
-          justifyContent: 'space-between',
-          gap:            40,
+        <motion.div {...fadeUp(0)} className="journey-banner" style={{
+          background:   C.surfaceHigh,
+          border:       `1px solid ${C.border}`,
+          borderRadius: 6,
         }}>
           <div style={{
             fontFamily: CINZEL, fontSize: 'clamp(16px, 1.8vw, 22px)', fontWeight: 600,
@@ -233,7 +227,7 @@ export default function Progression() {
         </motion.div>
 
         {/* ── Rank cards ── */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+        <div className="ranks-grid">
           {ranks.map((r, i) => (
             <motion.div
               key={r.name}

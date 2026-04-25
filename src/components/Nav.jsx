@@ -3,11 +3,10 @@ import { C, CINZEL } from '../tokens';
 
 export default function Nav() {
   return (
-    <nav style={{
+    <nav className="nav-pad" style={{
       position:             'fixed',
       top: 0, left: 0, right: 0,
       zIndex:               100,
-      padding:              '0 56px',
       height:               64,
       display:              'flex',
       alignItems:           'center',

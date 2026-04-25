@@ -21,11 +21,10 @@ export default function Hero() {
   const colY = useTransform(scrollYProgress, [0, 1], [0, -180]);
 
   return (
-    <section ref={ref} id="hero" style={{
+    <section ref={ref} id="hero" className="hero-pad" style={{
       minHeight:  '100vh',
       display:    'flex',
       alignItems: 'center',
-      padding:    '64px 56px 120px',
       position:   'relative',
       overflow:   'hidden',
     }}>
@@ -99,12 +98,7 @@ export default function Hero() {
 
       {/* Foreground content — Layer 3 */}
       <div style={{ maxWidth: 1100, margin: '0 auto', width: '100%', position: 'relative', zIndex: 1 }}>
-        <div style={{
-          display:             'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap:                 80,
-          alignItems:          'center',
-        }}>
+        <div className="hero-grid">
           {/* Left: copy */}
           <div>
             <motion.div {...fadeUp(0)} style={{
@@ -179,14 +173,14 @@ export default function Hero() {
           </div>
 
           {/* Right: phones — Layer 2 */}
-          <div style={{ position: 'relative', height: 560, display: 'flex', justifyContent: 'center', alignItems: 'flex-start' }}>
-            <motion.div {...fadeUp(0.2)} className="float-a" style={{ width: 240, height: 519, zIndex: 2, flexShrink: 0 }}>
+          <div className="hero-phone-wrap">
+            <motion.div {...fadeUp(0.2)} className="hero-phone-main float-a">
               <DeviceFrame style={{ width: '100%', height: '100%' }}>
                 <img src="/assets/pantalla_Planner.png" alt="Planner Imperium" style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
               </DeviceFrame>
             </motion.div>
 
-            <motion.div {...fadeUp(0.35)} className="float-b" style={{
+            <motion.div {...fadeUp(0.35)} className="float-b hero-phone-secondary" style={{
               position:     'absolute',
               right:        -20,
               top:          48,

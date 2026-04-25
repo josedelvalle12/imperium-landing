@@ -58,8 +58,7 @@ export default function Value() {
   const colY = useTransform(scrollYProgress, [0, 1], [40, -120]);
 
   return (
-    <section ref={ref} id="value" style={{
-      ...sectionPad,
+    <section ref={ref} id="value" className="s-pad" style={{
       background:   C.surfaceLow,
       borderTop:    `1px solid ${C.border}`,
       borderBottom: `1px solid ${C.border}`,
@@ -101,21 +100,19 @@ export default function Value() {
         </div>
 
         {/* Pillars grid */}
-        <div style={{
-          display:             'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          background:          C.border,
-          gap:                 1,
-          border:              `1px solid ${C.border}`,
+        <div className="value-grid" style={{
+          background: C.border,
+          gap:        1,
+          border:     `1px solid ${C.border}`,
         }}>
           {pillars.map((p, i) => (
             <motion.div
               key={p.num}
               {...fadeUp(i * 0.1)}
               whileHover={{ background: C.surfaceMid }}
+              className="pillar-cell"
               style={{
                 background: C.surface,
-                padding:    '56px 40px',
                 textAlign:  'center',
                 transition: 'background 0.3s',
               }}

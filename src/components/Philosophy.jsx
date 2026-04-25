@@ -8,10 +8,9 @@ export default function Philosophy() {
   const colY = useTransform(scrollYProgress, [0, 1], [40, -160]);
 
   return (
-    <section ref={ref} id="philosophy" style={{
+    <section ref={ref} id="philosophy" className="s-pad-tall" style={{
       background:   C.surface,
       textAlign:    'center',
-      padding:      '160px 56px',
       position:     'relative',
       overflow:     'hidden',
     }}>

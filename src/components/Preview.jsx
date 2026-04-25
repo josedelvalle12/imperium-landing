@@ -41,7 +41,8 @@ function PhoneCard({ screen, delay }) {
     <motion.div
       ref={ref}
       {...scaleIn(delay)}
-      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 28, marginTop: screen.marginTop }}
+      className={screen.marginTop ? `phone-mt-${screen.marginTop}` : undefined}
+      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 28 }}
     >
       {/* Mid layer: parallax on phone */}
       <motion.div style={{ y, width: 228, height: 493, position: 'relative' }}>
@@ -77,7 +78,7 @@ function PhoneCard({ screen, delay }) {
 
 export default function Preview() {
   return (
-    <section id="preview" style={{ ...sectionPad, background: C.surfaceLow, borderTop: `1px solid ${C.border}`, overflow: 'hidden' }}>
+    <section id="preview" className="s-pad" style={{ background: C.surfaceLow, borderTop: `1px solid ${C.border}`, overflow: 'hidden' }}>
       <div style={containerStyle}>
         <motion.div {...fadeUp(0)} style={{ marginBottom: 72 }}>
           <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase', color: C.primary, display: 'block', marginBottom: 20 }}>Interfaz</span>
@@ -85,7 +86,7 @@ export default function Preview() {
           <div style={{ width: 36, height: 1, background: C.primary }} />
         </motion.div>
 
-        <div style={{ display: 'flex', gap: 32, justifyContent: 'center', alignItems: 'flex-start' }}>
+        <div className="preview-phones">
           {screens.map((s, i) => (
             <PhoneCard key={s.title} screen={s} delay={i * 0.14} />
           ))}

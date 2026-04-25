@@ -2,13 +2,9 @@ import { C, CINZEL } from '../tokens';
 
 export default function Footer() {
   return (
-    <footer style={{
-      background:     C.surfaceLow,
-      borderTop:      `1px solid ${C.border}`,
-      padding:        '36px 56px',
-      display:        'flex',
-      alignItems:     'center',
-      justifyContent: 'space-between',
+    <footer className="footer-inner" style={{
+      background: C.surfaceLow,
+      borderTop:  `1px solid ${C.border}`,
     }}>
       <img
         src="/assets/Logo_Imperium-horizontal.svg"

@@ -3,11 +3,10 @@ import { C, CINZEL, EASE, fadeUp } from '../tokens';
 
 export default function CTA() {
   return (
-    <section id="cta-final" style={{
+    <section id="cta-final" className="s-pad-tall" style={{
       background:   C.surface,
       borderTop:    `1px solid ${C.border}`,
       textAlign:    'center',
-      padding:      '160px 56px',
       position:     'relative',
       overflow:     'hidden',
     }}>
