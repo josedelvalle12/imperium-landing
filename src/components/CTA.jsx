@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { C, CINZEL, EASE, fadeUp } from '../tokens';
 import logoImperium from '/assets/Logo_Imperium.svg';
+import marmolBg from '/assets/fondo_marmol.jpg';
 
 export default function CTA() {
   return (
@@ -15,7 +16,7 @@ export default function CTA() {
       <div style={{
         position:           'absolute',
         inset:              0,
-        backgroundImage:    'url(/assets/fondo_marmol.jpg)',
+        backgroundImage:    `url(${marmolBg})`,
         backgroundSize:     'cover',
         backgroundPosition: 'center',
         opacity:            0.06,
