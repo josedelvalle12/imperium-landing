@@ -67,7 +67,7 @@ const ranks = [
     color:   '#818cf8',
     bg:      'rgba(129,140,248,0.10)',
     border:  'rgba(129,140,248,0.25)',
-    desc:    'Estructura y defensa. Mantés la consistencia cuando otros ceden.',
+    desc:    'Estructura y defensa. Mantenés la consistencia cuando otros ceden.',
     Icon:    GiShieldReflect,
   },
   {

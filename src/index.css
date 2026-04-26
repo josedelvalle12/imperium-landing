@@ -96,6 +96,9 @@ a, button {
 .hero-phone-secondary { display: none !important; }
 @media (min-width: 768px) { .hero-phone-secondary { display: block !important; } }
 
+.hero-eyebrow { margin-bottom: 28px; }
+@media (max-width: 767px) { .hero-eyebrow { margin-bottom: 10px; } }
+
 /* ─── Value pillars ─── */
 .value-grid { display: grid; grid-template-columns: 1fr; }
 @media (min-width: 640px) { .value-grid { grid-template-columns: repeat(3, 1fr); } }

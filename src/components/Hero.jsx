@@ -104,7 +104,7 @@ export default function Hero() {
         <div className="hero-grid">
           {/* Left: copy */}
           <div>
-            <motion.div {...fadeUp(0)} style={{
+            <motion.div {...fadeUp(0)} className="hero-eyebrow" style={{
               fontSize:      10,
               fontWeight:    600,
               letterSpacing: '0.28em',
